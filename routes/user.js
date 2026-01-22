@@ -12,14 +12,14 @@ router.get("/", async (req, res) => {
 });
 
 router.get("/:userId", async (req, res) => {
-  const user = await User.findById(req.session.user._id);
+  const user = await User.findById(req.params.userId).select("_id username");
   const collections = await Collection.find({
-  owner: user._id,
-});
-res.render("users/show.ejs", {
-  user,
-  collections,
-})
+    owner: user._id,
+  });
+  res.render("users/show.ejs", {
+    user,
+    collections,
+  });
 });
 
 module.exports = router;
