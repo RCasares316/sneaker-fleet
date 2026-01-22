@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Sneaker</title>
+</head>
+<body>
+    <%- include("../partials/nav.ejs", { user }) %>
+    <h1>Edit Your Sneaker</h1>
+    <form action="/collection/<%= collection._id %>?_method=PUT" method="POST">
+      <label for="brand">Brand</label>
+      <input type="text" name="brand" id="brand" value= <%= collection.brand %> />
+
+      <label for="bodyStyle">Body Style</label>
+      <input type="text" name="bodyStyle" id="bodyStyle" value= <%= collection.bodyStyle %> />
+
+      <label for="variant">Variant</label>
+      <input type="text" name="variant" id="variant" value="<%= collection.variant || '' %>"/>
+      
+      <label for="releaseYear">Release Year</label>
+      <input type="text" name="releaseYear" id="releaseYear" value= <%= collection.releaseYear %> />
+
+      <label for="colorPattern">Color Pattern</label>
+      <input type="text" name="colorPattern" id="colorPattern" value= <%= collection.colorPattern %> />
+
+      <label for="forSale">For Sale</label>
+      <input type="checkbox" name="forSale" id="forSale" 
+      <% if(collection.forSale){ %>
+        checked
+     <% } %> />
+      
+      <label for="price">Price</label>
+      <input type="text" name="price" id="price" value= <%= collection.price %> />      
+      
+      <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

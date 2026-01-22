@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Sneaker Fleet</title>
+  </head>
+  <body>
+    <%- include("../partials/nav.ejs", { user }) %>
+    <h1>My Sneaker Fleet</h1>
+    <ul>
+        <% collections.forEach((collection)=>{ %>
+          <a href="/collection/<%= collection._id %>">
+            <li><%= collection.brand %> 
+              <%= collection.bodyStyle %> 
+              <%= collection.colorPattern %></li>
+          </a>
+        <% }) %>
+      </ul>
+  </body>
+</html>

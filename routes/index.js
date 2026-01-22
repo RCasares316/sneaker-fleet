@@ -1,5 +1,6 @@
 const { Router } = require("express");
 const authRoutes = require("./auth.js");
+const collectionRoutes = require("./collection.js");
 const isSignedIn = require("../middleware/is-signed-in.js");
 
 const router = Router();
@@ -9,10 +10,7 @@ router.get("/", (req, res) => {
 });
 
 // Example of protecting a route with custom middleware (isSignedIn)
-router.get("/vip", isSignedIn, (req, res) => {
-  res.send("You made it to the vip lounge.");
-});
-
 router.use("/auth", authRoutes);
+router.use("/collection", isSignedIn, collectionRoutes);
 
 module.exports = router;

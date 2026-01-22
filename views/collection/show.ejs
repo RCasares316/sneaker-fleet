@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <%- include("../partials/nav.ejs", { user }) %>
+    <h1><%= user.username %></h1>
+    <li>
+        <%= collection.brand %>
+        <%= collection.bodyStyle %>
+        <% if(collection.variant){ %>
+            <%= collection.variant %>
+        <% } %>
+        <%= collection.releaseYear %>
+        <%= collection.colorPattern %>
+        <% if(collection.forSale){ %>
+            <%= "For Sale" %>
+        <% } %>
+        <%= collection.price %>
+    </li>
+
+    <a href="/collection/<%= collection._id %>/edit">
+      Edit
+    </a>
+
+    <form
+      action="/collection/<%= collection._id %>?_method=DELETE"
+      method="POST"
+    >
+      <button type="submit">Delete this food</button>
+    </form>
+</body>
+</html>

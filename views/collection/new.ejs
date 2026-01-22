@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <%- include("../partials/nav.ejs", { user }) %>
+    <h1>Add Your Sneaker</h1>
+    <form action="/collection" method="POST">
+      <label for="brand">Brand</label>
+      <input type="text" name="brand" id="brand" />
+
+      <label for="bodyStyle">Body Style</label>
+      <input type="text" name="bodyStyle" id="bodyStyle" />
+
+      <label for="variant">Variant</label>
+      <input type="text" name="variant" id="variant" />
+      
+      <label for="releaseYear">Release Year</label>
+      <input type="text" name="releaseYear" id="releaseYear" />
+
+      <label for="colorPattern">Color Pattern</label>
+      <input type="text" name="colorPattern" id="colorPattern" />
+
+      <label for="forSale">For Sale</label>
+      <input type="checkbox" name="forSale" id="forSale" />
+      
+      <label for="price">Price</label>
+      <input type="text" name="price" id="price" />      
+      
+      <button type="submit">Submit</button>
+    </form>
+  </body>
+</html>
