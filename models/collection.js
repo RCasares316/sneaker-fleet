@@ -7,7 +7,7 @@ const collectionSchema = new mongoose.Schema({
   releaseYear: { type: String, required: true },
   colorPattern: { type: String, required: true },
   forSale: { type: String },
-  price: { type: Number, required: true},
+  price: { type: String, required: true},
   owner: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
 });
 

@@ -1,7 +1,8 @@
-const express = require("express");
-const router = express.Router();
-
+const { Router } = require("express");
+const users = require("../controllers/users.js");
 const User = require("../models/user.js");
+const Collection = require("../models/collection.js");
+const router = Router();
 
 router.get("/", async (req, res) => {
   const allUsers = await User.find({});
@@ -12,9 +13,13 @@ router.get("/", async (req, res) => {
 
 router.get("/:userId", async (req, res) => {
   const user = await User.findById(req.session.user._id);
-  const pantryData = user.pantry;
-  res.render("users/show.ejs", {
-    pantry: pantryData,
-  });
+  const collections = await Collection.find({
+  owner: user._id,
 });
+res.render("users/show.ejs", {
+  user,
+  collections,
+})
+});
+
 module.exports = router;
