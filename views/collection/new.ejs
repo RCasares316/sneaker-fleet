@@ -4,33 +4,45 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="../styles.css">
   </head>
-  <body>
-    <%- include("../partials/nav.ejs", { user }) %>
+  <body class="newBody">
+    <%- include("../partials/nav.ejs") %>
     <h1>Add Your Sneaker</h1>
-    <form action="/collection" method="POST">
-      <label for="brand">Brand</label>
-      <input type="text" name="brand" id="brand" />
 
-      <label for="bodyStyle">Body Style</label>
-      <input type="text" name="bodyStyle" id="bodyStyle" />
+    <% if (errorMessage) { %>
+      <p class="errMessage" style="color: red; font-weight: bold;"><%= errorMessage %></p>
+    <% } %>
 
-      <label for="variant">Variant</label>
-      <input type="text" name="variant" id="variant" />
+    <form class="newForm" action="/collection" method="POST">
+      <label class="newLabel" for="brand">Brand</label>
+      <input class="newInput" type="text" name="brand" id="brand" 
+      value="<%= formData?.brand || '' %>" />
+
+      <label class="newLabel" for="bodyStyle">Body Style</label>
+      <input class="newInput" type="text" name="bodyStyle" id="bodyStyle"
+      value="<%= formData?.bodyStyle || '' %>" />
+
+      <label class="newLabel" for="variant">Variant</label>
+      <input class="newInput" type="text" name="variant" id="variant"
+      value="<%= formData?.variant || '' %>" />
       
-      <label for="releaseYear">Release Year</label>
-      <input type="text" name="releaseYear" id="releaseYear" />
+      <label class="newLabel" for="releaseYear">Release Year</label>
+      <input class="newInput" type="text" name="releaseYear" id="releaseYear"
+      value="<%= formData?.releaseYear || '' %>" />
 
-      <label for="colorPattern">Color Pattern</label>
-      <input type="text" name="colorPattern" id="colorPattern" />
+      <label class="newLabel" for="colorPattern">Color Pattern</label>
+      <input class="newInput" type="text" name="colorPattern" id="colorPattern"
+      value="<%= formData?.colorPattern || '' %>" />
 
-      <label for="forSale">For Sale</label>
-      <input type="checkbox" name="forSale" id="forSale" />
+      <label class="newLabel" for="forSale">For Sale</label>
+      <input class="newInput" type="checkbox" name="forSale" id="forSale" />
       
-      <label for="price">Price</label>
-      <input type="text" name="price" id="price" />      
+      <label class="newLabel" for="price">Price</label>
+      <input class="newInput" type="text" name="price" id="price" 
+      value="<%= formData?.price || '$' %>" />      
       
-      <button type="submit">Submit</button>
+      <button class= "newButton" type="submit">Submit</button>
     </form>
   </body>
 </html>

@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../styles.css">
 </head>
-<body>
+<body class="showBody">
     <%- include("../partials/nav.ejs", { user }) %>
     <h1><%= user.username %></h1>
-    <li>
+    <li class="showLi">
         <%= collection.brand %>
         <%= collection.bodyStyle %>
         <% if(collection.variant){ %>
@@ -22,7 +23,7 @@
         <%= collection.price %>
     </li>
 
-    <a href="/collection/<%= collection._id %>/edit">
+    <a class="showEdit" href="/collection/<%= collection._id %>/edit">
       Edit
     </a>
 
@@ -30,7 +31,7 @@
       action="/collection/<%= collection._id %>?_method=DELETE"
       method="POST"
     >
-      <button type="submit">Delete this sneaker</button>
+      <button class="buttonDelete" type="submit">Delete this sneaker</button>
     </form>
 </body>
 </html>

@@ -1,12 +1,284 @@
 *,
 *::before,
 *::after {
-  box-sizing: border-box; /* Ensures padding and border are included in the element's total width and height */
+  box-sizing: border-box;
 }
 
 /* Optional base styles */
-body {
+.landingBody {
   margin: 0; /* Removes default body margin */
   padding: 0;
   line-height: 1.5; /* Improves readability */
+  background-image: url(https://images.pexels.com/photos/5771895/pexels-photo-5771895.jpeg);
+  background-size: cover;
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+  color: white;
+  font-size: 48px;
+}
+
+.landingH3 {
+  display: flex;
+  color: white;
+  font-size: 32px;
+  justify-content: flex-start;
+  padding-left: 8px;
+  margin-bottom: 12px;
+}
+
+.landingP {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  max-width: 450px;
+  color: white;
+  font-size: 20px;
+  padding-left: 8px;
+  margin-top: 8px;
+}
+
+.registerBody {
+  background-image: url(https://wallpapers.com/images/featured/sneaker-x499s7jambwdigab.jpg);
+  background-size: contain;
+}
+
+.registerUn {
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  padding-bottom: 6px;
+}
+
+.registerP {
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  padding-bottom: 6px;
+}
+
+.registerCp {
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  padding-bottom: 6px;
+}
+
+.registerForm {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 6px;
+}
+
+.input1 {
+  max-width: 250px;
+  align-self: center;
+  padding-bottom: 6px;
+}
+
+.input2 {
+  max-width: 250px;
+  align-self: center;
+  padding-bottom: 6px;
+}
+
+.input3 {
+  max-width: 250px;
+  align-self: center;
+  padding-bottom: 6px;
+}
+
+.button1 {
+  max-width: 150px;
+  align-self: center;
+  padding-bottom: 6px;
+}
+
+.loginBody {
+  background-image: url(https://wallpapers.com/images/featured/sneaker-x499s7jambwdigab.jpg);
+  background-size: contain;
+}
+
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 6px;
+}
+
+.loginUn {
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  padding-bottom: 6px;
+}
+
+.loginP {
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  padding-bottom: 6px;
+}
+
+.input4 {
+  max-width: 250px;
+  align-self: center;
+  padding-bottom: 6px;
+}
+
+.input5 {
+  max-width: 250px;
+  align-self: center;
+  padding-bottom: 6px;
+}
+
+.button2 {
+  max-width: 150px;
+  align-self: center;
+  padding-bottom: 6px;
+}
+
+.collectionBody {
+  background-image: url(https://hd.wallpaperswide.com/thumbs/sneakers_black_and_white-t2.jpg);
+  background-size: cover;
+}
+
+.collectionUl {
+  display: flex;
+  flex-direction: column;
+}
+
+.collectionLi {
+  font-size: 20px;
+}
+
+.newBody {
+  background-image: url(https://cdn.wallpapersafari.com/31/26/4gA7HY.jpg);
+  background-size: cover;
+}
+
+.newForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.newInput {
+  max-width: 250px;
+  align-self: center;
+  padding-bottom: 6px;
+}
+
+.newLabel {
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  padding-bottom: 6px;
+}
+
+.newButton {
+  max-width: 150px;
+  align-self: center;
+  margin-top: 6px;
+  padding: 6px 30px;
+  font-size: 15px;
+}
+
+.errMessage {
+  text-align: center;
+}
+
+.showBody {
+  background-image: url(https://m.media-amazon.com/images/I/610XoIAXBPL._AC_UF350,350_QL80_.jpg);
+  background-size: 95% 400%;
+}
+
+.showLi {
+  display: flex;
+  flex-direction: row;
+  color: white;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.showEdit {
+  font-size: 24px;
+}
+
+.buttonDelete {
+  font-size: 16px;
+}
+
+.editBody {
+  background-image: url(https://c4.wallpaperflare.com/wallpaper/362/518/454/shoes-chucks-allstars-black-wallpaper-preview.jpg);
+  background-size: contain;
+}
+
+.editForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.editLabel {
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  padding-bottom: 6px;
+}
+
+.editInput {
+  max-width: 250px;
+  align-self: center;
+  padding-bottom: 6px;
+}
+
+.buttonEdit {
+  max-width: 150px;
+  align-self: center;
+  margin-top: 6px;
+  padding: 6px 30px;
+  font-size: 15px;
+}
+
+.userBody {
+  background-image: url(https://wallpapercave.com/wp/wp12749644.jpg);
+  background-size: contain;
+}
+
+.userUl {
+  display: flex;
+  flex-direction: column; /* keeps them stacked */
+  align-items: center;
+  font-size: 32px;
+}
+
+.userShowBody {
+  background-image: url(https://wallpapers-clan.com/wp-content/uploads/2025/04/jordan-4-sneakers-black-wallpaper-.jpg);
+  background-size: 100% 500%;
+}
+
+.userShowUl {
+  display: flex;
+  flex-direction: column; /* keeps them stacked */
+  align-items: center;
+  font-size: 24px;
+  color: white;
+}
+
+/* Nav */
+nav {
+  display: flex;
+  font-size: 24px;
+  justify-content: space-between;
+  align-items: baseline;
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 8px;
+}
+
+a {
+  color: white;
+}
+
+a:hover {
+  color: gray;
 }

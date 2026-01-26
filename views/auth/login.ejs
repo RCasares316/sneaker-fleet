@@ -4,17 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Log In</title>
+    <link rel="stylesheet" href="../styles.css">
   </head>
-  <body>
+  <body class="loginBody">
     <%- include("../partials/nav.ejs") %>
 
     <h1>Log in</h1>
-    <form action="/auth/login" method="POST">
-      <label for="username">Username:</label>
-      <input type="text" name="username" id="username" />
-      <label for="password">Password:</label>
-      <input type="password" name="password" id="password" />
-      <button type="submit">Log in</button>
+    <form class="loginForm" action="/auth/login" method="POST">
+      <label class="loginUn" for="username">Username:</label>
+      <input class="input4" type="text" name="username" id="username" />
+      <label class="loginP" for="password">Password:</label>
+      <input class="input5" type="password" name="password" id="password" />
+      <button class="button2" type="submit">Log in</button>
     </form>
   </body>
 </html>

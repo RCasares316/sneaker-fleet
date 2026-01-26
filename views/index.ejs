@@ -4,14 +4,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Landing Page</title>
-    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="styles.css">
   </head>
-  <body>
-    <%- include("partials/nav.ejs", { user }) %>
+  <body class="landingBody">
+    <%- include("partials/nav.ejs") %>
     <% if (user) {%>
-      <h1>Welcome to the app, <%= user.username %></h1>
+      <h1 class="landingH1">Welcome to Sneaker Fleet, <%= user.username %></h1>
     <% } else { %>
-      <h1>Welcome to the app, Guest!</h1>
+      <h1>Welcome to Sneaker Fleet, Guest!</h1>
     <% } %>
+    <h3 class="landingH3">About Sneaker Fleet</h3>
+    <p class="landingP">
+      Showcase your sneaker collection in a clean, personal gallery and explore collections 
+      from sneakerheads around the world. Discover rare pairs, unique styles, and inspiration 
+      while sharing your own lineup with a community that appreciates every detail—from the 
+      classics to the latest drops.</p>
   </body>
 </html>

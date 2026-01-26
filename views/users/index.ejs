@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>All Users</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="userBody">
     <%- include("../partials/nav.ejs", { user }) %>
-    <h1>All Users</h1>
-    <ul>
+    <h1>All Sneaker Fleets</h1>
+    <ul class="userUl">
         <% users.forEach((user)=>{ %>
           <a href="/users/<%= user._id %>">
             <li><%= user.username %></li>
