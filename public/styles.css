@@ -265,6 +265,17 @@ h1 {
   color: white;
 }
 
+.container{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  padding-bottom: 12px;
+}
+
 /* Nav */
 nav {
   display: flex;
