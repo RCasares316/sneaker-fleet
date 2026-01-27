@@ -22,8 +22,8 @@ Each sneaker includes:
 - Variant (optional)
 - Release Year
 - Color Pattern
-- For Sale status
-- Price (if for sale)
+- For Sale status (optional)
+- Price 
 
 Users can:
 
