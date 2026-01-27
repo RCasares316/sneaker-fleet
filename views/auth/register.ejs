@@ -7,11 +7,14 @@
     <link rel="stylesheet" href="../styles.css">
   </head>
   <body class="registerBody">
-    <%- include("../partials/nav.ejs") %>
+     <%- include("../partials/nav.ejs") %>
+    <% if (errorMessage) { %>
+      <p class="errMessage" style="color: red; font-weight: bold;"><%= errorMessage %></p>
+    <% } %>
     <h1 class="registerh1">Create a new account!</h1>
     <form class="registerForm" action="/auth/register" method="POST">
       <label class="registerUn" for="username">Username:</label>
-      <input class="input1" type="text" name="username" id="username" />
+      <input class="input1" type="text" name="username" id="username" value="<%= formData?.username || '' %>" />
       <label class="registerP" for="password">Password:</label>
       <input class="input2" type="password" name="password" id="password" />
       <label class="registerCp" for="confirmPassword">Confirm Password:</label>

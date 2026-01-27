@@ -3,40 +3,64 @@ const bcrypt = require("bcrypt");
 
 // GET "/auth/register"
 const register = (req, res) => {
-  res.render("auth/register.ejs");
+  res.render("auth/register.ejs", {
+    errorMessage: null,
+    formData: {},
+  });
 };
 
 // POST "/auth/register"
 const registerUser = async (req, res) => {
-  // Make sure username is not already taken
-  const userInDatabase = await User.findOne({ username: req.body.username });
-  if (userInDatabase) {
-    return res.send("Username already taken.");
+  try {
+    const { username, password, confirmPassword } = req.body;
+
+    // Check if username exists
+    const userInDatabase = await User.findOne({ username });
+    if (userInDatabase) {
+      return res.render("auth/register.ejs", {
+        errorMessage: "Username already taken.",
+        formData: req.body,
+      });
+    }
+
+    // Check password match
+    if (password !== confirmPassword) {
+      return res.render("auth/register.ejs", {
+        errorMessage: "Password and Confirm Password must match.",
+        formData: req.body,
+      });
+    }
+
+    // Hash password
+    const hashedPassword = bcrypt.hashSync(password, 10);
+
+    // Create user
+    const user = await User.create({
+      username,
+      password: hashedPassword,
+    });
+
+    // Start session
+    req.session.user = {
+      username: user.username,
+      _id: user._id,
+    };
+
+    req.session.save(() => {
+      res.redirect("/");
+    });
+
+  } catch (err) {
+    // Handle mongoose validation errors (if you add required fields later)
+    if (err.name === "ValidationError") {
+      res.render("auth/register.ejs", {
+        errorMessage: "Username already in use",
+        formData: req.body,
+      });
+    } else {
+      res.status(500).send(err.message);
+    }
   }
-
-  // Make sure password and confirm password are the same
-  if (req.body.password !== req.body.confirmPassword) {
-    return res.send("Password and Confirm Password must match");
-  }
-
-  // Hash the password
-  const hashedPassword = bcrypt.hashSync(req.body.password, 10);
-
-  // Create our new user
-  const user = await User.create({
-    username: req.body.username,
-    password: hashedPassword,
-  });
-
-  // Manage Session
-  req.session.user = {
-    username: user.username,
-    _id: user._id,
-  };
-
-  req.session.save(() => {
-    res.redirect("/");
-  });
 };
 
 // GET "/auth/login"
