@@ -67,7 +67,7 @@ Defines the sneaker schema:
 
 ---
 
-### `collectionController.js`
+### `collection.js` (Controller)
 
 Handles all logic related to sneakers.
 
