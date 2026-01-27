@@ -53,36 +53,6 @@ Users can:
 
 ---
 
-## Project Structure
-
-SneakerFleet
-- ├── models
-- │ ├── user.js
-- │ └── collection.js
-- │
-- ├── controllers
-- │ └── collectionController.js
-- │
-- ├── routes
-- │ ├── collection.js
-- │ └── users.js
-- │
-- ├── views
-- │ ├── collection
-- │ │ ├── index.ejs
-- │ │ ├── new.ejs
-- │ │ └── edit.ejs
-- │ ├── users
-- │ │ └── show.ejs
-- │ └── partials
-- │ └── nav.ejs
-- │
-- ├── public
-- │ └── styles.css
-- │
-- └── server.js
-
----
 
 ## File Overview
 
